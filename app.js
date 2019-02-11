@@ -4,7 +4,7 @@ const express      = require("express"),
       bodyParser   = require("body-parser"),
       mongoose     = require("mongoose")
 
-
+const port = process.env.PORT || 3000;
 mongoose.connect('mongodb://localhost/restful_blogapp');
 app.set('view engine','ejs');
 app.use(express.static('public'));
@@ -129,6 +129,6 @@ app.get('/blogs',function(req,res){
     
    
 
-app.listen(process.env.PORT,process.env.IP,function(){
-    console.log('Our Blog app server has benn started');
+app.listen(port,process.env.IP,function(){
+    console.log('Our Blog app server has been started');
 })
