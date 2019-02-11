@@ -1,0 +1,55 @@
+<% include ./partials/header%>
+
+<div class="ui maintext container">
+<div class="ui huge header"><h2>Welcome to the Techky Blogs</h2></div>
+
+  <div class="ui top attached segment">
+      <div class="ui divided items">
+          
+          <%myBlogs.forEach(function(blog){%>
+            <div class='item'>
+                <div class='image'><img src="<%= blog.image %>"></div>
+                   <div class='content'>
+                          <a class="header" href="/blogs/<%= blog._id %>"><%= blog.title%></a>
+                    <div class="meta"><span><strong><%=blog.created.toDateString()%></strong></span></div>  
+                    
+                    <div class="description"><p><%- blog.body.substring(0, 100) %>......</p></div>
+                   <div class="extras">
+                       <a class="ui floated basic voilet button" href="/blogs/<%= blog._id %>">
+                           Read More
+                           <i class="right chevrin icon"></i>
+                           </a>
+                   </div>
+                   </div>
+
+                
+
+
+
+                
+            </div>
+
+
+
+
+<% })%>
+          
+          
+          
+          
+          
+          
+          
+      </div>
+      
+      
+      
+      
+      
+  </div>
+
+
+
+
+</div>
+<%include ./partials/footer %>
