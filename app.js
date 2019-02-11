@@ -5,7 +5,7 @@ const express      = require("express"),
       mongoose     = require("mongoose")
 
 const port = process.env.PORT || 3000;
-mongoose.connect('mongodb://localhost/restful_blogapp');
+mongoose.connect('mongodb://localhost:27017/restful_blogapp');
 app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
